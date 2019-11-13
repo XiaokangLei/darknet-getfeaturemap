@@ -210,6 +210,13 @@ image float_to_cow_image_float(int w, int h, int c, float *data, int ai)
 	//保存文件到特定文件夹（feature_txt）中并根据ai大小命名
 	//创建一个1维的空图片
 	image out = make_empty_image(w, h, 1);
+    sprintf(tp, "feature_pic", ai);
+    mkdir(tp,0777);
+    sprintf(tp, "feature_txt", ai);
+    mkdir(tp,0777);
+    sprintf(tp, "feature_pic_final", ai);
+    mkdir(tp,0777);
+    
 	for (int k = 0; k < c; k++) {
 		if (ai < 10)
 			sprintf(tp, "feature_pic/%d", ai);
